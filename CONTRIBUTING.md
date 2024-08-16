@@ -1,6 +1,6 @@
 # Tauri Contributing Guide
 
-Please checkout [Tauri contributing guide](https://github.com/tauri-apps/tauri/blob/dev/.github/CONTRIBUTING.md).
+Please check out [Tauri contributing guide](https://github.com/tauri-apps/tauri/blob/dev/.github/CONTRIBUTING.md).
 
 ## Development Guide
 
@@ -21,10 +21,10 @@ cargo run -- <cli arguments>
 #### Adding a new template
 
 > [!IMPORTANT]
-> You should open a new issue first to discuss the addition of a certain template.
+> You should first open a new issue to discuss the addition of a certain template.
 
 - Add a directory in `templates` and name it `template-<template-name>` where `<template-name>` is the name of the template and add all the files you need there.
-- A template also must have a `.manifest` file which contains info about the template:
+- A template also must have a `.manifest` file, which contains info about the template:
 
   ```ini
   beforeDevCommand = {% pkg_manager_run_command %} dev
@@ -32,9 +32,9 @@ cargo run -- <cli arguments>
   devPath = http://localhost:1420
   distDir = ../dist
 
-  # the next sction is used to determine what files to copy from `templates/_assets_`
+  # the next section is used to determine what files to copy from `templates/_assets_`
   # if you introduce a new file like an icon that is shared between multiple templates,
-  # it should be added to `templates/_assets_` and add entry for it here
+  # it should be added to `templates/_assets_` and add an entry for it here
   # for example: `tauri.svg` is shared between all templates so it lives in `templates/_assets_`
   # and is always added to the next section
   [files]
@@ -45,9 +45,9 @@ cargo run -- <cli arguments>
 
 - In `src/template.rs`, add an entry in the `Template` enum, and modify its methods if needed.
 - In `src/package_manager.rs` add your new template to the appropriate package manager in the `templates` method.
-- Modify `.scripts/generate-templates-matrix.js` and append the template name inside the template list for the appropriate package manager so the CI would run tests for it.
+- Modify `.scripts/generate-templates-matrix.js` and append the template name inside the template list for the appropriate package manager so the CI can run tests for it.
 - Before making a commit, make sure to run `cargo fmt --all` and `pnpm format` in the repo root.
 
 ## Financial Contribution
 
-Tauri is an MIT-licensed open source project. Its ongoing development can be supported via [Github Sponsors](https://github.com/sponsors/nothingismagick) or [Open Collective](https://opencollective.com/tauri). We prefer Github Sponsors as donations made are doubled through the matching fund program.
+Tauri is an MIT-licensed open source project. Its ongoing development can be supported via [Github Sponsors](https://github.com/sponsors/nothingismagick) or [Open Collective](https://opencollective.com/tauri).
